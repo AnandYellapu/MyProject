@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+<!-- font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header>
+    <a href="./index.html" class="logo"><i class="fas fa-bitcoin-sign"></i>CoinDex</a>
+       <nav class="navbar">
+        <a class="" href="#"></a>
+    </nav>
+    </header>
+    <section>
+     <!-- <button id="all-coin-btn">All Coins</button> -->
+     <button id="all-coin-btn" type="button" class="btn btn-primary">All Coins</button>
+    <br>
+
+    <table class="table table-success table-striped table-hover text-center">
+        <thead>
+                <th>#</th>
+                <th>image</th>
+                <th>symbol</th>
+                <th>name</th>
+                <th>$current_price</th>
+                <th>$mkt cap</th>
+                <th>mkt cap_rank</th>
+                <th>total_volume</th>
+                <th>circulation_supply</th>
+                <th>total_supply</th>
+        </thead> 
+
+         <!-- create a table body to insert the data  -->
+          <tbody id="table-body"></tbody>
+        </table>
+      </section>
+
+    <script src="listofcoins.js"></script>
+</body>
+</html>
