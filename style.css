@@ -82,6 +82,21 @@ section:nth-child(even){
     letter-spacing: .1rem;
 }
 
+.btn1{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn1:hover{
+    background: red;
+}
+
 header .logo{
     color: var(--black);
     font-size: 2.5rem;
