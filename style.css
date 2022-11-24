@@ -635,9 +635,9 @@ html{
     transition: .7s;
 }
 #login:hover {
-    color: #00b3ff;
-    box-shadow: 0 0 5px #00b3ff;
-    text-shadow: 0 0 5px #00b3ff;
+    color: black;
+/*     box-shadow: 0 0 5px #00b3ff;
+    text-shadow: 0 0 5px #00b3ff; */
 }
 
 #email{
@@ -716,9 +716,9 @@ html{
     transition: .7s;
 }
 #signup:hover {
-    color: #00b3ff;
-    box-shadow: 0 0 5px #00b3ff;
-    text-shadow: 0 0 5px #00b3ff;
+    color: black;
+/*     box-shadow: 0 0 5px #00b3ff;
+    text-shadow: 0 0 5px #00b3ff; */
 }
 
 #email{
