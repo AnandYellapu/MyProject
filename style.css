@@ -604,8 +604,8 @@ html{
     margin-top: 10%;
     border: 2px solid #dddddd;
     border-radius: 0;
-    width: 350px;
-    height: 300px;
+    width: 450px;
+    height: 350px;
     text-align: center;
     background-image: linear-gradient(95.2deg, #A1FFCE 26.8%, #FAFFD1  64%);
     background-blend-mode:lighten;
@@ -635,10 +635,8 @@ html{
     transition: .7s;
 }
 #login:hover {
-/*     color: black; */
-/*     box-shadow: 0 0 5px #00b3ff; */
-    text-shadow: black;                 
-    /*0 0 5px #00b3ff;  */
+     color: black;
+    text-shadow: 0 0 5px black;
 }
 
 #email{
@@ -717,10 +715,8 @@ html{
     transition: .7s;
 }
 #signup:hover {
-/*     color: black; */
-/*     box-shadow: 0 0 5px #00b3ff;*/
-    text-shadow: black;
-/*         0 0 5px #00b3ff;  */
+ color: black;
+    text-shadow: 0 0 5px #00b3ff;
 }
 
 #email{
