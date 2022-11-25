@@ -635,7 +635,7 @@ html{
     transition: .7s;
 }
 #login:hover {
-    color: black;
+/*     color: black; */
 /*     box-shadow: 0 0 5px #00b3ff; */
     text-shadow: black;                 
     /*0 0 5px #00b3ff;  */
@@ -717,7 +717,7 @@ html{
     transition: .7s;
 }
 #signup:hover {
-    color: black;
+/*     color: black; */
 /*     box-shadow: 0 0 5px #00b3ff;*/
     text-shadow: black;
 /*         0 0 5px #00b3ff;  */
