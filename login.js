@@ -37,19 +37,19 @@ alert("you have registered")
 }
 }
 
-
+//Login form validation
 
 async function page() {
-  var username = document.getElementById('email').value;
+  var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   let url = 'https://636702d979b0914b75da31b6.mockapi.io/CoinDex'
       let res = await fetch(url)
       let data = await res.json(url)  
       for(obj of data){
-          if(username===obj.name&&password===obj.password){
-          console.log(`dear`)   
+          if(email===obj.email&&password===obj.password){
+          console.log(`Your data`)   
           login.style.backgroundColor = "black";
-          //window.location.href=('./ct1.html')
+          //window.location.href=('./listofcoins.html')
           
       }
       else{
