@@ -75,8 +75,6 @@ var swiper = new Swiper(".home-slider", {
 
 
 
-  const addToFavBtns = document.querySelectorAll("fas fa-star");
-  const toggleActive = function(){
-  this.classList.toggle("active");
-  }
-  addEventListener(addToFavBtns, "click",toggleActive);
+  function star (icon) {
+  $(icon).toggleClass('fas far');
+}
