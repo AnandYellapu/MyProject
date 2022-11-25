@@ -637,7 +637,8 @@ html{
 #login:hover {
     color: black;
 /*     box-shadow: 0 0 5px #00b3ff; */
-    text-shadow: 0 0 5px #00b3ff; 
+    text-shadow: black;                 
+    /*0 0 5px #00b3ff;  */
 }
 
 #email{
@@ -718,7 +719,8 @@ html{
 #signup:hover {
     color: black;
 /*     box-shadow: 0 0 5px #00b3ff;*/
-    text-shadow: 0 0 5px #00b3ff; 
+    text-shadow: black;
+/*         0 0 5px #00b3ff;  */
 }
 
 #email{
