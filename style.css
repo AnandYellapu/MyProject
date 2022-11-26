@@ -606,6 +606,7 @@ html{
 }
 
 .login-page h2{
+    color:white;
     margin-top: 10px;
     font-size: 20px;
 }
@@ -671,6 +672,7 @@ html{
 }
 
 .signup-page h2{
+    color:white;
     margin-top: 10px;
     font-size: 20px;
 }
