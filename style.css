@@ -588,6 +588,7 @@ header .navbar{
 
 html{
     background-color: whitesmoke;
+     background-color: linear-gradient(#141e30,#141e30);
 }
 .login-page{
     background: linear-gradient(#141e30,#141e30);
