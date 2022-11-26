@@ -589,23 +589,12 @@ header .navbar{
 html{
     background-color: whitesmoke;
 }
-
-/*#password {
-    -webkit-text-security: disc;
-
-}
-
-#confirmpassword{
-    -webkit-text-security:disc;
-}*/
-
-
 .login-page{
     margin-top: 10%;
     border: 2px solid #dddddd;
     border-radius: 0;
     width: 450px;
-    height: 350px;
+    height: 450px;
     text-align: center;
     background-image: linear-gradient(95.2deg, #A1FFCE 26.8%, #FAFFD1  64%);
     background-blend-mode:lighten;
@@ -646,16 +635,8 @@ html{
 }
 
 #password{
-    -webkit-text-security:disc;
     margin-top: 20px;
     font-size: 20px;
-}
-
-#confirmpassword{
-    -webkit-text-security:disc;
-    margin-top: 20px;
-    font-size: 20px;
-
 }
 #login{
     margin-top: 20px; 
@@ -676,8 +657,8 @@ html{
     margin-top: 10%;
     border: 2px solid #dddddd;
     border-radius: 0;
-    width: 350px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     text-align: center;
     background-image: linear-gradient(95.2deg, #A1FFCE 26.8%, #FAFFD1  64%);
     background-blend-mode:lighten;
@@ -691,12 +672,6 @@ html{
     margin-top: 10px;
     font-size: 20px;
 }
-
-/*.signup-page p{
-    padding-right: 125px;
-    font-size: 15px;
-    margin-top: 5px;
-}*/
 
 
 
