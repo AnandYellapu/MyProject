@@ -645,7 +645,7 @@ html{
 }
 
 .login-page span{
-    color:white
+    color:white;
     margin-top: 5rem; 
     font-size: 15px;
     letter-spacing:1px;
