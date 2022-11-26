@@ -590,6 +590,7 @@ html{
     background-color: whitesmoke;
 }
 .login-page{
+    background: linear-gradient(#141e30,#141e30);
     margin-top: 10%;
     border: 2px solid #dddddd;
     border-radius: 0;
