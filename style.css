@@ -597,7 +597,7 @@ html{
     width: 450px;
     height: 450px;
     text-align: center;
-   background-image:linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+    background-image:linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
     background-blend-mode:lighten;
     position:relative;
     left:40%;
@@ -607,7 +607,7 @@ html{
 
 .login-page h2{
     color:white;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 20px;
 }
 
@@ -632,6 +632,7 @@ html{
 
 #email{
     flex: content;
+    margin-top: 10px;
     border-radius: 1px;
     font-size: 20px;
 }
@@ -700,6 +701,7 @@ html{
 
 #email{
     flex: content;
+    margin-top: 10px;
     border-radius: 0;
     font-size: 20px;
 }
