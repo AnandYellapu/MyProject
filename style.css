@@ -645,6 +645,7 @@ html{
 }
 
 .login-page span{
+    color:white
     margin-top: 5rem; 
     font-size: 15px;
     letter-spacing:1px;
@@ -717,6 +718,7 @@ html{
 }
 
 .signup-page span{
+    color: white;
     margin-top: 9rem; 
     font-size: 15px;
     letter-spacing:1px;
