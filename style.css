@@ -657,6 +657,16 @@ html{
     color:white;
 }
 
+.text-field {
+  text-align:center;
+    padding: 10px 50px;
+    margin: 10px ;
+    border-radius:6px;
+    font-size: 13pt;
+    border: 1px solid ;
+
+}
+
 /*----------------------------------Signup------------------------------------*/
 html{
     background-color: whitesmoke;
@@ -733,5 +743,14 @@ html{
 }
 .signup-page span a{
     color:white;
+}
+.text-field {
+  text-align:center;
+    padding: 10px 50px;
+    margin: 10px ;
+    border-radius:6px;
+    font-size: 13pt;
+    border: 1px solid ;
+
 }
 
