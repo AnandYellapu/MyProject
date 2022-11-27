@@ -633,7 +633,7 @@ html{
 #email{
     flex: content;
     margin-top: 10px;
-    border-radius: 1px;
+    border-radius: 6px;
     font-size: 20px;
 }
 
@@ -716,7 +716,7 @@ html{
 #email{
     flex: content;
     margin-top: 10px;
-    border-radius: 0;
+    border-radius: 6px;
     font-size: 20px;
 }
 
