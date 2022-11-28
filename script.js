@@ -78,3 +78,7 @@ var swiper = new Swiper(".home-slider", {
   function star (icon) {
   $(icon).toggleClass('fas far');
 }
+
+ function heart (icon) {
+  $(icon).toggleClass('fas far');
+}
