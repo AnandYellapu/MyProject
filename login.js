@@ -49,7 +49,7 @@ async function page() {
           if(email===obj.email&&password===obj.password){
           console.log(`Your data`)   
           login.style.backgroundColor = "black";
-          window.location.href=('./listofcoins.html')
+          window.location.href=('./home.html')
           
       }
       else{
