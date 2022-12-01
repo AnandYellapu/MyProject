@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="https://img.icons8.com/external-black-fill-lafs/64/null/external-Bitcoin-cryptocurrency-black-fill-lafs.png">
+    <link rel="stylesheet" href="./style2.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" class="logo"><i class="fas fa-bitcoin-sign"></i>CoinDex</a>
+           <nav class="navbar">
+            <!-- <a href="./coins.html" class="far fa-star"; style="font-size: 15px; margin-right: 50px; color: goldenrod"><span>Coins</span></a>
+             <div>
+            <input type="text" class="inp" placeholder="  Search Coin" id="search">
+            </div> -->
+    
+        </nav>
+        </header>
+    <!-- <div class="container"> -->
+    <div class="login-card">
+        <!-- <div class="container"> -->
+            <img src="./assets/images/logo.png" alt="" style="width: 150px;">
+        <!-- </div> -->
+        <h2>Login</h2>
+        <!-- <h3>Enter your credentials</h3> -->
+        <div class="login-form">
+            <input type="text" id="signInEmail" placeholder="Email">
+            <input type="Password" id="signInPassword" placeholder="Password">
+            <!-- <a href="./pg-reset.html">Forgot Password?</a> -->
+            <button onclick="getUsersData()">LOGIN</button>
+            <span>Don't have an account?<a href="./signup.html">Signup here</a></span>
+            <!-- <mark style="font-size: 12px;"> Testing purpose <br> Username: admin / Password: test@1234 </mark> -->
+        </div>
+    </div>
+    <!-- </div> -->
+    <script>
+        
+        let url = "https://6350def1dfe45bbd55b0519a.mockapi.io/users";
+        async function getUsersData() {
+            let email = document.getElementById("signInEmail").value.toLowerCase();
+            let password = document.getElementById("signInPassword").value;
+
+            if (email == "") {
+                alert("email field should not be blank");
+                document.getElementById("signInEmail").focus();
+                return false;
+            }
+            if (password == "") {
+                alert("Password field should not be blank");
+                document.getElementById("signInPassword").focus();
+                return false;
+            }
+            let user_found = false;
+            try {
+                let data = await fetch(url)
+                let res = await data.json()
+
+                res.forEach(element => {
+                    if (element.email === email && element.password === password) {
+                        user_found = true;
+                        console.log("Logged in successfully");
+                        window.localStorage.setItem('email',email);
+                        window.location.href = "./Home.html";
+                        return;
+                    }
+
+                });
+
+                if (!user_found) {
+                    
+                    alert("Incorrect credentials");
+                };
+
+            }
+            catch (err) {
+                alert(err);
+                console.log(err)
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
