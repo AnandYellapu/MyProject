@@ -3,6 +3,7 @@
 :root{
     --green:#27ae60;
     --black:#192a56;
+    --yellow:#ffd700;
     --light-color:#666;
     --box-shadow: 0 .5rem 1.5 rgba(0,0,0,.1);
 }
@@ -104,7 +105,7 @@ header .logo{
 }
 
 header .logo i {
-    color: var(--green)
+    color: var(--yellow)
 }
 
 header .navbar a{
