@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="https://img.icons8.com/external-black-fill-lafs/64/null/external-Bitcoin-cryptocurrency-black-fill-lafs.png">
+    <link rel="stylesheet" href="./style2.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" class="logo"><i class="fas fa-bitcoin-sign"></i>CoinDex</a>
+           <nav class="navbar">
+            <!-- <a href="./coins.html" class="far fa-star"; style="font-size: 15px; margin-right: 50px; color: goldenrod"><span>Coins</span></a>
+             <div>
+            <input type="text" class="inp" placeholder="  Search Coin" id="search">
+            </div> -->
+    
+        </nav>
+        </header>
+    <!-- <div class="container"> -->
+    <div class="login-card">
+        <h2>Sign up</h2>
+<!--         <h3>Enter your details</h3> -->
+        <div class="login-form">
+            <input type="text" id="signup_Username" placeholder="Username" maxlength="30">
+            <input type="email" id="signup_email" placeholder="Email id">
+            <input type="text" id="signup_mobile" placeholder="Mobile no" onkeypress="return /[0-9]/i.test(event.key)" maxlength="10">
+            <input type="Password" id="signup_password" placeholder="Enter Password">
+            <input type="Password" id="signup_password1" placeholder="Confirm Password">
+            <button onclick="createUser()">Sign Up</button>
+            <span>Already have an account?<a href="./index.html">Sign in</a></span>
+        </div>
+    </div>
+    <!-- </div> -->
+    <script src="./script.js"></script>
+    <script>
+        let url = "https://6350def1dfe45bbd55b0519a.mockapi.io/users";
+        async function createUser() {
+            let signup_Username = document.getElementById("signup_Username").value.toLowerCase();
+            let signup_email = document.getElementById("signup_email").value.toLowerCase();
+            let signup_mobile = document.getElementById("signup_mobile").value;
+            let signup_password = document.getElementById("signup_password").value;
+            let signup_password1 = document.getElementById("signup_password1").value;
+
+
+            // Validate All fields are filled
+            if (signup_Username == "" || signup_email == "" || signup_mobile == "" || signup_password == "" || signup_password1 == "") {
+                alert("Fields should not be blank");
+                return;
+            }
+            // Verify email and Password
+            if (ValidateEmail(signup_email)) {
+                if (signup_mobile.lenght<10) {
+                    alert("Enter valid Mobile no");
+                    return;
+                }
+                if (!(signup_password === signup_password1)) {
+                    alert("Passwords doesnot match");
+                    return;
+                }
+                
+            }
+
+            let user_found = false;
+            try {
+                let data = await fetch(url)
+                let res = await data.json()
+
+                res.forEach(element => {
+                    if (element.name === signup_Username) {
+                        user_found = true;
+                        alert("Username already exist");
+                        return false;
+                    }
+                    if (element.email === signup_email) {
+                        user_found = true;
+                        alert("Email id already registered");
+                        return false;
+                    }
+                    if (element.mobile === signup_mobile) {
+                        user_found = true;
+                        alert("Mobile number already registered");
+                        return false;
+                    }
+
+                });
+
+                
+                let newUser = {
+                        "name": `${signup_Username}`,
+                        "email": `${signup_email}`,
+                        "mobile": `${signup_mobile}`,
+                        "password": `${signup_password}`
+                    }
+
+                if (!user_found) {
+                    console.log("Creating User");
+
+                    let data = await fetch(url, {
+                        method: "POST",
+                        headers:{'Content-Type':"application/json"},
+                        body: JSON.stringify(newUser)
+                    })
+                    let res = await data.json();
+                    console.table(res);
+                    alert("User created successfully");
+                    window.location.href="./index.html.html";
+
+                };
+
+            }
+            catch (err) {
+                alert(err);
+                console.log(err)
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
