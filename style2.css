@@ -134,7 +134,7 @@ background-size: cover; */
 }
 
 .login-card>h2 {
-    color: var(--green);
+    color: var(--black);
     margin: 0 0 12px;
     font-size: 40px;
     font-weight: 600;
