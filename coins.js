@@ -22,7 +22,7 @@ function coins() {
           <div class="card-body">
             <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Symbol: ${data1.symbol}</p>
             <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Id: ${data1.id}</p>
-            <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Current Price: ${data1.current_price}</p>
+            <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Current Price: $${data1.current_price}</p>
             <button type="button"  class="btn btn-success">Buy</button>
             <button class="btn btn-success" style="display:none"></button>
             </div>
