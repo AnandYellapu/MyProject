@@ -1,11 +1,3 @@
-// const cotiData = {
-//   id: "coti",
-//   name: "COTI",
-//   symbol: "coti",
-//   current_price: 0.071456,
-//   image: "https://assets.coingecko.com/coins/images/2962/large/Coti.png?1559653863"
-//   };
-
 function coins() {
   let coin = fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false");
   coin.then((res) => res.json())
@@ -13,7 +5,7 @@ function coins() {
       console.log(data);
       result = data;
 
-        // Add COTI data to the result array
+   // Add Data to the result array using Push
   result.push({
     id: "coti",
     name: "COTI",
@@ -30,18 +22,10 @@ function coins() {
     image: "https://assets.coingecko.com/coins/images/10547/large/WazirX.png?1580834330"
   });
 
-  showCoin(result);
-});
-
-
-    //    // Remove the Bitcoin data from the list
-    //   result = result.filter((coin) => coin.id !== "bitcoin");
-
-    //   // Add the COTI data to the list
-    //   result.push(cotiData);
-
-    //   showCoin(result);
-    // });
+  // Remove the Data from the list using filter
+      result = result.filter((coin) => coin.id !== "");
+ showCoin(result);
+    });
 }
 coins();
 
