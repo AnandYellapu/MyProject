@@ -43,7 +43,28 @@ function createRow({ id, name, symbol, image, current_price, market_cap, market_
   
 	const firstTenUsers = userList.slice(0, 20);
 	firstTenUsers.map((element) => createRow(element));
-  }
+	  
+	     // Get a reference to the input element
+const searchInput = document.querySelector("#search");
+
+// Add an event listener to the input element
+searchInput.addEventListener("input", () => {
+  // Get the current input value
+  const searchValue = searchInput.value;
+
+  // Filter the data based on the search value
+  const filteredData = userList.filter((item) => {
+    // Check if the name or symbol of the item matches the search value
+    return item.name.includes(searchValue) || item.symbol.includes(searchValue);
+  });
+
+  // Clear the existing data in the table
+  document.querySelector(".userlist").innerHTML = "";
+
+  // Add the filtered data to the table
+  filteredData.forEach((item) => createRow(item));
+});
+}
   getUsersData();
 
 
