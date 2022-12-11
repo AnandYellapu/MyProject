@@ -141,7 +141,7 @@ header .icons a:hover{
 }
 
 header .icons #menu-bars{
-    margin-right: 40px;
+/*     margin-right: 40px; */
     display: none;
 }
 
