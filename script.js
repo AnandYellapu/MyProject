@@ -92,3 +92,8 @@ function ValidateEmail(mail) {
   alert("You have entered an invalid email address!");
   return (false);
 }
+
+function logout() {
+  // Redirect the user to the logout page
+  window.location.replace("./index.html");
+}
