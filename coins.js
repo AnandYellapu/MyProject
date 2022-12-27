@@ -47,7 +47,7 @@ function showCoin(data1) {
     return `
       <div class="card text-center crd shadow  mt-8 mb-5" style="width: 30rem;">
         <h5 class="card-title " id="coin" style="color:var(--black); font-size:20px; letter-spacing:1px;">${data1.name}</h5>
-         <div class="far fa-star" style="margin-right:240px;font-size:1.7rem;border-radius:100%;"></div>
+//          <div class="far fa-star" style="margin-right:240px;font-size:1.7rem;border-radius:100%;"></div>
         <img src="${data1.image}" class="card-img-top hgt img-thumbnail" style="width:210px; height:190px; margin-left:50px;">
         <div class="card-body">
           <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Symbol: ${data1.symbol}</p>
