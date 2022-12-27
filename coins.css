@@ -94,3 +94,20 @@ header a span{
 ::placeholder{
  color: rgba(112, 115, 118, 0.442);
 }
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inp {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .inp {
+    width: 100%;
+  }
+}
