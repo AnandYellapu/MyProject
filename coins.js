@@ -30,6 +30,7 @@ function coins() {
   });
   showCoin(result);
   });
+}
   coins();
 
   /* Code to update Price in Payment screen */
@@ -71,14 +72,17 @@ const searchEl = document.getElementById('search')
 
 let result = [];
 
-  const coinIdsToRemove = [];
-  coinIdsToRemove.forEach(idToRemove => {
-  const index = result.findIndex(coin => coin.id === idToRemove || coin.symbol === idToRemove || coin.name === idToRemove);
-  result.splice(index, 1);
+ searchEl.addEventListener('keyup', (e) => {
+    const searchCoin = e.target.value
+    // Use .filter() to find coins that match the search query
+    const filtered = result.filter((coin) => {
+      // Check if the search query is included in the coin's name, symbol, or ID
+      return (coin.name.toLowerCase().includes(searchCoin.toLowerCase()) ||
+              coin.symbol.toLowerCase().includes(searchCoin.toLowerCase()) ||
+              coin.id.toLowerCase().includes(searchCoin.toLowerCase()));
+    });
+    // Update the UI with the filtered results
+    showCoin(filtered);
   });
-  showCoin(result);
-  });
-  }
-  coins();
 
   
