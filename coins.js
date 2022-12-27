@@ -30,7 +30,6 @@ function coins() {
   });
   showCoin(result);
   });
-  }
   coins();
 
   /* Code to update Price in Payment screen */
