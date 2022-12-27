@@ -33,12 +33,7 @@ html{
     font-size: 62.5%;
 }
 
-.container{
-    margin-top: 5%;
-}
-
 .payment-page{
-   margin-top: 10%;
   background-color: rgb(255, 255, 255);
   width: 500px;
   height: 750px;
@@ -202,22 +197,21 @@ button:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 11;
     }
+    .center {
+  text-align: center;
+}
+
     </style>
 </head>
 <body>
-    <!-- <header>
-        <a href="./index.html" class="logo"><i class="fas fa-bitcoin-sign"></i>CoinDex</a>
-           <nav class="navbar">
-        </nav>
-        </header> -->
         <div class="container">
             <div class="payment-page">
                 <h2>Payment</h2>
                 <h4 style="font-size:17px;">Price</h4>
-        
                 <div class="input-box">
-                  <input type="CurrentPrice" placeholder="Price" required class="product.current_price">
-                </div><br><br>
+                <!-- <input type="`$${CurrentPrice}`" placeholder="Price" class="price" required id="payment-price">
+                </div><br><br> -->
+                <input type="hidden" name="price" value="${price}"><br><br>
                     <h4>Account</h4>
                     <div class="input-group">
                         <div class="input-box">
@@ -269,9 +263,11 @@ button:hover{
                     </div>
                     <div class="input-group">
                         <div class="input-box">
-                            <button onclick="showPopup()">PAY NOW</button>
+                            <button onclick="checkForm()">PAY NOW</button>
                              <div id="popup-overlay">
+                              
                                 <div id="popup-content">
+                                  <i class="fa fa-check-circle" style="font-size:48px;color: var(--green);"></i><br>
                                   <h1 style="text-align:center; color: green;">Thank you!</h1><br>
                                     <h2>You have succesfully ordered.</h2>
                                   <h2>OrderType: <span style="color:green">BUY</span></h2>
@@ -288,6 +284,33 @@ button:hover{
             </div>
             </div>
             <script>
+
+window.onload = () => {
+  const paymentPriceInput = document.querySelector('#payment-price');
+  const currentPrice = localStorage.getItem('currentPrice');
+  paymentPriceInput.value = `$${currentPrice}`;
+};
+
+
+
+
+              function checkForm() {
+                var firstName = document.querySelector('.input-group .name').value;
+  var lastName = document.querySelector('.input-group .name').value;
+  var email = document.querySelector('.input-group .name').value;
+  var dob = document.querySelector('.input-group .dob').value;
+  var cardNumber = document.querySelector('.input-group .name').value;
+  var cardCVC = document.querySelector('.input-group .name').value;
+  var date = document.querySelector('.input-group .date').value;
+  
+  if (!firstName || !lastName || !email || !dob || !cardNumber || !cardCVC || !date) {
+    alert("Please fill out all the fields in the form to proceed with the payment.");
+  } else {
+    // Show the popup if all fields are filled out
+    showPopup();
+  }
+}
+
     function showPopup() {
     document.getElementById("popup-overlay").style.display = "block";
     }
@@ -295,6 +318,17 @@ button:hover{
     function hidePopup() {
     document.getElementById("popup-overlay").style.display = "none";
     }
+
+    
+
+
+    window.onload = () => {
+  const paymentPriceInput = document.querySelector('#payment-price');
+  const currentPrice = localStorage.getItem('currentPrice');
+  paymentPriceInput.value = currentPrice;
+};
+
+
             </script>
         
 </body>
