@@ -1,6 +1,5 @@
 function createRow({ id, name, symbol, image, current_price, market_cap, market_cap_rank,total_volume,total_supply,circulating_supply  }) {
 	document.querySelector(".userlist").innerHTML += `                        
-	<td class="far fa-star" onClick="star(this)"></td>
 	<td>${id}</td>
 	<td><img src=${image}  alt="image1" width=20px height=20px style="text-align:center;"></td>
 	<td>${symbol}</td>
@@ -66,8 +65,3 @@ searchInput.addEventListener("input", () => {
 });
 }
   getUsersData();
-
-
-  function star (icon) {
-  $(icon).toggleClass('fas far');
-}
