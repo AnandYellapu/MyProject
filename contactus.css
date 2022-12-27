@@ -46,6 +46,12 @@ header .logo i {
     color: var(--yellow)
 }
 
+ @media (max-width: 600px) {
+    .logo {
+      font-size: 16px;
+    }
+  }
+
 form {
     width: 60%;
     margin: 0 auto;
@@ -80,4 +86,10 @@ form {
   }
   input[type=button]:hover {
     background-color: var(--green);
+  }
+
+  @media (max-width: 600px) {
+    form {
+      width: 90%;
+    }
   }
