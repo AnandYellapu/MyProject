@@ -40,6 +40,15 @@ html{
   margin: 25px auto 0;
    box-shadow: 0px 0px 20px rgba(0,0,0,0.5); 
 }
+
+/* responsive */
+@media (max-width: 800px) { /* Apply different styles for viewports smaller than 800px */
+  .payment-page {
+    width: 90%; /* Make the payment page even wider on smaller screens */
+  }
+}
+/*     End     */
+ 
  .payment-page h2{
   background-color: #fcfcfc;
   color: black;
@@ -187,6 +196,7 @@ button:hover{
     
     #popup-content {
     position: fixed;
+    width:350px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -199,61 +209,6 @@ button:hover{
     .center {
   text-align: center;
 }
-        
-        @media screen and (max-width: 600px) {
-  #popup-content {
-    /* Add styles for small screen sizes here */
-  }
-}
-
-@media screen and (min-width: 601px) and (max-width: 1200px) {
-  #popup-content {
-    /* Add styles for medium screen sizes here */
-  }
-}
-
-@media screen and (min-width: 1201px) {
-  #popup-content {
-    /* Add styles for large screen sizes here */
-  }
-}
-
-        
-/* @media (max-width: 600px) {
-.container {
-width: 90%;
-margin: 0 auto;
-}
-.input-box, .input-group {
-width: 100%;
-}
-.payment-page h2, .payment-page h4 {
-text-align: center;
-}
-.input-box input, .input-group input {
-width: 100%;
-}
-.input-group {
-flex-direction: column;
-}
-.input-group .input-box {
-margin-bottom: 10px;
-}
-.radio {
-display: block;
-margin: 10px auto;
-}
-.radio + label {
-display: block;
-margin: 0 auto;
-}
-.input-box .date {
-width: 100%;
-}
-.input-box button {
-width: 100%;
-}
-}      */
 
     </style>
 </head>
