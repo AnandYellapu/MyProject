@@ -29,6 +29,17 @@ function coins() {
 }
 coins();
 
+  /* Code to update Price in Payment screen */
+let bitcoin_array = JSON.parse(localStorage.getItem('payment_data')) || [];
+
+function priceToPayment(price){
+  console.log("Inside Price to pay ");
+  localStorage.setItem("curr_Item_Price",JSON.stringify(String(price)))
+}
+
+/* End - Code to update Price in Payment screen */
+
+
 
 function showCoin(data1) {
   const coinDetails = data1.map((data1) => {
@@ -42,7 +53,7 @@ function showCoin(data1) {
           <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Symbol: ${data1.symbol}</p>
           <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Id: ${data1.id}</p>
           <p class="card-text" style="color:#0275d8; font-size:15px; font-weight:bold; letter-spacing:1px;">Current Price: $${data1.current_price}</p>
-          <a href="./payment.html" type="button"  class="btn btn-success">Buy</a>
+         <a href="./payment.html" class="btn btn-success" onclick="priceToPayment(${data1.current_price})" id="buy-button">Buy</a>
           <button class="btn btn-success" style="display:none"></button>
           </div>
     </div>
