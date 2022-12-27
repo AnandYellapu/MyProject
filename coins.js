@@ -22,12 +22,16 @@ function coins() {
     image: "https://assets.coingecko.com/coins/images/10547/large/WazirX.png?1580834330"
   });
 
-  // Remove the Data from the list using filter
-      result = result.filter((coin) => coin.id !== "");
- showCoin(result);
-    });
-}
-coins();
+  // Remove the Data coins from the list using filter
+  const coinIdsToRemove = [];
+  coinIdsToRemove.forEach(idToRemove => {
+  const index = result.findIndex(coin => coin.id === idToRemove || coin.symbol === idToRemove || coin.name === idToRemove);
+  result.splice(index, 1);
+  });
+  showCoin(result);
+  });
+  }
+  coins();
 
   /* Code to update Price in Payment screen */
 let bitcoin_array = JSON.parse(localStorage.getItem('payment_data')) || [];
@@ -68,11 +72,14 @@ const searchEl = document.getElementById('search')
 
 let result = [];
 
-searchEl.addEventListener('keyup', (e) => {
-  const searchCoin = e.target.value
-  const filtered = result.filter((coin) => { return (coin.name.toLowerCase().includes(searchCoin.toLowerCase())); });
-  showCoin(filtered);
-
-});
+  const coinIdsToRemove = [];
+  coinIdsToRemove.forEach(idToRemove => {
+  const index = result.findIndex(coin => coin.id === idToRemove || coin.symbol === idToRemove || coin.name === idToRemove);
+  result.splice(index, 1);
+  });
+  showCoin(result);
+  });
+  }
+  coins();
 
   
