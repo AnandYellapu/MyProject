@@ -270,7 +270,7 @@ button:hover{
                                   <h1 style="text-align:center; color: green;">Thank you!</h1><br>
                                     <h2>You have succesfully ordered.</h2>
                                   <h2>OrderType: <span style="color:green">BUY</span></h2>
-                                  <h2>Status :Completed</h2>
+                                  <h2>Status :<span style="color:green">Completed</span></h2>
                                   <br/>
                                 <br/>
                                     <button type="button" onclick="hidePopup()"><a href="./Home.html">Back to home</a></button1>
@@ -291,7 +291,7 @@ window.onload = () => {
 };
 
 
-
+/*alert function to fill all details*/
 
               function checkForm() {
                 var firstName = document.querySelector('.input-group .name').value;
@@ -309,7 +309,12 @@ window.onload = () => {
     showPopup();
   }
 }
-
+                
+  /*end*/
+                
+                
+/*Popup function*/
+                
     function showPopup() {
     document.getElementById("popup-overlay").style.display = "block";
     }
@@ -317,21 +322,15 @@ window.onload = () => {
     function hidePopup() {
     document.getElementById("popup-overlay").style.display = "none";
     }
+                /*End*/
 
+                
+    /*Updating price payment*/ 
     let Price_test = "$"+JSON.parse(window.localStorage.getItem("curr_Item_Price"));
     console.log(Price_test);
     let price_tag = document.getElementById('currentPrice');
     price_tag.setAttribute("value",Price_test);
-
-
-//     window.onload = () => {
-//   const paymentPriceInput = document.querySelector('#payment-price');
-//   const currentPrice = localStorage.getItem('currentPrice');
-//   paymentPriceInput.value = currentPrice;
-// };
-
-
-            </script>
+</script>
         
 </body>
 
