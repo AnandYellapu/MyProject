@@ -90,6 +90,20 @@ header .logo i {
 th{
     color:green;
 }
+    
+@media (max-width: 768px) {
+.table {
+width: 100%;
+}
+.table td {
+font-size: 14px;
+padding: 8px;
+}
+.userlist {
+overflow-x: scroll;
+}
+}
+    
 </style>
 </head>
 <body>
@@ -98,23 +112,15 @@ th{
     <a href="./Home.html" class="logo"><i class="fas fa-bitcoin-sign"></i>CoinDex</a>
        <nav class="navbar">
         <a class="" href="#"></a>
-        <div>
-<!--             <a href="./coins.html" class=""; style="font-size: 15px; margin-right: 50px; color: goldenrod"><span>Coins</span></a> -->
-           </div>
         <form id="form" class="d-flex">
           <input id="search" class="form-control me-2" style="font-size:15px" type="search" placeholder="Search" aria-label="Search">
         </form>
-
-
-    </nav>
+      </nav>
     </header>
     <section>
-        <div class="container-responsive">
-            <!-- <h1 id="title" style="text-align: center">Coins</h1> -->
-        
-            <div class="table">      
-              <table class="table table-success table-striped table-hover text-center" class="list">
-                <thead>
+     <div class="table">      
+      <table class="table table-success table-striped table-hover text-center" class="list">
+       <thead>
                   <tr>
                       <th></th>
                     <th>#id</th>
