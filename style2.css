@@ -182,3 +182,36 @@ background-size: cover; */
     color: #f9f9f9;
     font-weight: 600;
 }
+
+p {
+    font-size: 12px;
+    margin-right: 80px;
+  }
+  
+  u {
+    font-size: 15px;
+    color: orangered;
+  }
+  
+  @media (max-width: 768px) {
+    p {
+      font-size: 12px;
+      margin-right: 60px;
+    }
+  
+    u {
+      font-size: 17px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    p {
+      font-size: 12px;
+      margin-right: 40px;
+    }
+  
+    u {
+      font-size: 17px;
+    }
+  }
+  
