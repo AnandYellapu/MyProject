@@ -108,6 +108,6 @@ header {
 
 @media (max-width: 768px) {
   .inp {
-    width: 100%;
+    width: 80%;
   }
 }
