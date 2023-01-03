@@ -1,97 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="icon" href="https://img.icons8.com/external-black-fill-lafs/64/null/external-Bitcoin-cryptocurrency-black-fill-lafs.png">
     <link rel="stylesheet" href="./style2.css">
+    <title>Document</title>
 </head>
-
 <body>
-
-    <header>
-        <a href="./index.html" class="logo"><i class="fas fa-bitcoin-sign"></i>CoinDex</a>
-           <nav class="navbar">
-            <!-- <a href="./coins.html" class="far fa-star"; style="font-size: 15px; margin-right: 50px; color: goldenrod"><span>Coins</span></a>
-             <div>
-            <input type="text" class="inp" placeholder="  Search Coin" id="search">
-            </div> -->
-    
-        </nav>
-        </header>
-    <!-- <div class="container"> -->
-    <div class="login-card">
-        <!-- <div class="container"> -->
-            <img src="./assets/images/logo.png" alt="" style="width: 150px;">
-        <!-- </div> -->
-        <h2>Login</h2>
-        <i class="fa fa-user icon" style="width: 30px; height:30px; font-size: 25px;"></i>
-        <div class="login-form">
-            <input type="text" id="signInEmail" placeholder="Email">
-            <input type="Password" id="signInPassword" placeholder="Password">
-             <p>I agree CoinDex's <u>terms and conditions.</u></p>
-            <button onclick="getUsersData()">LOGIN</button>
-            <span>Not registered yet?<a href="./signup.html"> Register</a></span>
-            
-        </div>
-    </div>
-    <!-- </div> -->
+    <div>
+        <h2 style="text-align: center;">Login</h2>
+        <i class="fa fa-user icon" style="width: 30px; height:30px; font-size: 25px; margin-left: 48%;"></i>
+        <form id="login-form">
+            <label for="email"></label><br>
+            <input type="email" id="email" name="email" placeholder="Email"><br>
+            <label for="password"></label><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br><br>
+            <label for="terms-and-conditions" style="font-size: 13px">I agree to the CoinDex's <u style="color:red; cursor:pointer" onclick="openTerms()"> terms and conditions</u></label><br>
+            <button type="submit">Login</button>
+          </form>
+         <a href="signup.html">Not yet Registered?</a></span>
+          </div>
     <script>
-        
-        let url = "https://6350def1dfe45bbd55b0519a.mockapi.io/CoinDex";
-        async function getUsersData() {
-            let email = document.getElementById("signInEmail").value.toLowerCase();
-            let password = document.getElementById("signInPassword").value;
-
-            if (email == "") {
-                alert("email field should not be blank");
-                document.getElementById("signInEmail").focus();
-                return false;
-            }
-            if (password == "") {
-                alert("Password field should not be blank");
-                document.getElementById("signInPassword").focus();
-                return false;
-            }
-            let user_found = false;
-            try {
-                let data = await fetch(url)
-                let res = await data.json()
-
-                res.forEach(element => {
-                    if (element.email === email && element.password === password) {
-                        user_found = true;
-                        console.log("Logged in successfully");
-                        window.localStorage.setItem('email',email);
-                        window.location.href = "./Home.html";
-                        return;
-                    }
-
-                });
-
-                if (!user_found) {
-                    
-                    alert("Incorrect credentials");
-                };
-
-            }
-            catch (err) {
-                alert(err);
-                console.log(err)
-            }
+        function login() {
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  // var terms = document.getElementById("terms-and-conditions").checked;
+  
+  if (!email) {
+  alert("Please enter your email.");
+  } else if (!password) {
+  alert("Please enter your password.");
+  } else {
+  fetch("https://6350def1dfe45bbd55b0519a.mockapi.io/CoinDex")
+  .then(function(response) {
+  return response.json();
+  })
+  .then(function(users) {
+  var emailExists = false;
+  var correctPassword = false;
+  
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].email == email) {
+          emailExists = true;
+          if (users[i].password == password) {
+            correctPassword = true;
+            break;
+          }
         }
+      }
+  
+      if (!emailExists) {
+        alert("Email not registered.");
+      } else if (!correctPassword) {
+        alert("Incorrect password.");
+      } else {
+        // alert("Successfully logged in!");
+        window.location.href = "home.html";
+      }
+    });
+  }
+  }
+  
+  document.getElementById("login-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  login();
+  });
 
 
 
+  function openTerms() {
+    window.open("terms.pdf");
+  }
     </script>
 </body>
-
 </html>
