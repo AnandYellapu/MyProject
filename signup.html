@@ -1,135 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="icon" href="https://img.icons8.com/external-black-fill-lafs/64/null/external-Bitcoin-cryptocurrency-black-fill-lafs.png">
-    <link rel="stylesheet" href="./style2.css">
+    <title>Signup</title>
+    <style>
+
+   div {
+    margin-top: 100px;
+    margin-left: 500px;
+     width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    div {
+      margin: 50px auto;
+      width: 90%;
+      max-width: 300px;
+    }
+  } 
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    form {
+      max-width: 300px;
+    }
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .terms-label {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+  }
+  
+  button[type="submit"] {
+    width: 60%;
+    border-radius: 6px;
+    margin-left: 20%;
+    background-color: red;
+    color: white;
+    padding: 14px 20px;
+    margin-bottom: 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    button[type="submit"] {
+      width: 80%;
+      margin-left: 10%;
+    }
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  a {
+    font-size: 15px;
+    color: blue;
+    text-decoration: none;
+    margin-left: 32%;
+  }
+  
+  @media (max-width: 600px) {
+    a {
+      margin-left: 32%;
+    }
+  }
+  
+  a:hover {
+    color: darkblue;
+    text-decoration: underline;
+  }
+    </style>
 </head>
-
 <body>
-
-    <header>
-        <a href="./index.html" class="logo"><i class="fas fa-bitcoin-sign"></i>CoinDex</a>
-           <nav class="navbar">
-            <!-- <a href="./coins.html" class="far fa-star"; style="font-size: 15px; margin-right: 50px; color: goldenrod"><span>Coins</span></a>
-             <div>
-            <input type="text" class="inp" placeholder="  Search Coin" id="search">
-            </div> -->
-    
-        </nav>
-        </header>
-    <!-- <div class="container"> -->
-    <div class="login-card">
-        <h2>Sign up</h2>
-         <i class="fa fa-user icon" style="width: 30px; height:30px; font-size: 25px;"></i>
-
-        <div class="login-form">
-            <input type="text" id="signup_Username" placeholder="UserName" maxlength="30">
-            <input type="email" id="signup_email" placeholder="Email ID">
-            <input type="text" id="signup_mobile" placeholder="Mobile" onkeypress="return /[0-9]/i.test(event.key)" maxlength="10">
-            <input type="Password" id="signup_password" placeholder="Enter Password">
-            <input type="Password" id="signup_password1" placeholder="Confirm Password">
-             <p>I agree CoinDex's <u>terms and conditions.</u></p>
-            <button onclick="createUser()">Sign Up</button>
-            <span>Already registered?<a href="./index.html"> Login</a></span>
-        </div>
+  <div>
+    <h2 style="text-align: center;">Signup</h2>
+    <i class="fa fa-user icon" style="width: 30px; height:30px; font-size: 25px; margin-left: 48%;"></i>
+    <form id="signup-form">
+      <label for="email"></label><br>
+      <input type="email" id="email" name="email" placeholder="Email"><br>
+      <label for="password"></label><br>
+      <input type="password" id="password" name="password" placeholder="Password"><br>
+      <label type="text" style="font-size: 12px; color: gray; margin-top: 10px;">A strong password should be at least 8 characters long and contain a combination of letters, numbers, and special characters.</label>
+      <label for="confirm-password"></label><br>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password"><br>
+      <label for="mobile"></label><br>
+      <select id="country-code" name="country-code">
+        <option value="+91">IND (+91)</option>
+      </select>
+      <input type="text" id="mobile" name="mobile" placeholder="Mobile"><br><br>
+      <label for="terms-and-conditions" style="font-size: 13px">I agree to the CoinDex's <u style="color:red; cursor:pointer" onclick="openTerms()"> terms and conditions</u></label><br>
+      <button type="submit">Sign Up</button>
+    </form> 
+    <a href="index.html">Already registered?</a>
     </div>
-    <!-- </div> -->
-    <script src="./script.js"></script>
     <script>
-        let url = "https://6350def1dfe45bbd55b0519a.mockapi.io/CoinDex";
-        async function createUser() {
-            let signup_Username = document.getElementById("signup_Username").value.toLowerCase();
-            let signup_email = document.getElementById("signup_email").value.toLowerCase();
-            let signup_mobile = document.getElementById("signup_mobile").value;
-            let signup_password = document.getElementById("signup_password").value;
-            let signup_password1 = document.getElementById("signup_password1").value;
-
-
-            // Validate All fields are filled
-            if (signup_Username == "" || signup_email == "" || signup_mobile == "" || signup_password == "" || signup_password1 == "") {
-                alert("Fields should not be blank");
-                return;
-            }
-            // Verify email and Password
-            if (ValidateEmail(signup_email)) {
-                if (signup_mobile.lenght<10) {
-                    alert("Enter valid Mobile no");
-                    return;
-                }
-                if (!(signup_password === signup_password1)) {
-                    alert("Passwords doesnot match");
-                    return;
-                }
-                
-            }
-
-            let user_found = false;
-            try {
-                let data = await fetch(url)
-                let res = await data.json()
-
-                res.forEach(element => {
-                    if (element.name === signup_Username) {
-                        user_found = true;
-                        alert("Username already exist");
-                        return false;
-                    }
-                    if (element.email === signup_email) {
-                        user_found = true;
-                        alert("Email id already registered");
-                        return false;
-                    }
-                    if (element.mobile === signup_mobile) {
-                        user_found = true;
-                        alert("Mobile number already registered");
-                        return false;
-                    }
-
-                });
-
-                
-                let newUser = {
-                        "name": `${signup_Username}`,
-                        "email": `${signup_email}`,
-                        "mobile": `${signup_mobile}`,
-                        "password": `${signup_password}`
-                    }
-
-                if (!user_found) {
-                    console.log("Creating User");
-
-                    let data = await fetch(url, {
-                        method: "POST",
-                        headers:{'Content-Type':"application/json"},
-                        body: JSON.stringify(newUser)
-                    })
-                    let res = await data.json();
-                    console.table(res);
-                    alert("User created successfully");
-                    window.location.href="./index.html.html";
-
-                };
-
-            }
-            catch (err) {
-                alert(err);
-                console.log(err)
-            }
-        }
-
-
+const form = document.getElementById('signup-form');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+  const mobile = document.getElementById('mobile').value;
+  // Check if any of the input fields are empty
+  if (!email || !password || !confirmPassword || !mobile) {
+    alert('Please fill out all fields');
+    return;
+  }
+  // Check if mobile number is valid
+  if (!/^[6-9]\d{9}$/.test(mobile)) {
+    alert('Please enter a valid mobile number where it should contains 10 numbers strictly');
+    return;
+  }
+// Check if password and confirm password match
+if (password !== confirmPassword) {
+alert('Passwords do not match');
+return;
+}
+  // Send a GET request to the API to retrieve a list of all users
+  fetch('https://6350def1dfe45bbd55b0519a.mockapi.io/users')
+  .then((response) => response.json())
+  .then((data) => {
+    // Loop through the list of users and check if the username, email, or mobile already exists
+    for (const user of data) {
+      if (user.email === email) {
+        alert('Email already exists');
+        return;
+      }
+      if (user.mobile === mobile) {
+        alert('Mobile already exists');
+        return;
+      }
+    }
+    // If username, email, and mobile do not already exist, you can send a POST request to the API to create a new user
+    fetch('https://6350def1dfe45bbd55b0519a.mockapi.io/CoinDex', {
+      method: 'POST',
+      body: JSON.stringify({ email, password, mobile }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+        alert('You have Successfully Registered go and login now');
+        window.location.href = 'index.html';
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('There was an error signing up');
+      });
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('There was an error checking for existing users');
+  });
+});
 
     </script>
 </body>
-
 </html>
