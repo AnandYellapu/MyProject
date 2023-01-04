@@ -107,6 +107,8 @@
     <h2 style="text-align: center;">Signup</h2>
     <i class="fa fa-user icon" style="width: 30px; height:30px; font-size: 25px; margin-left: 48%;"></i>
     <form id="signup-form">
+      <label for="username"></label><br>
+      <input type="username" id="username" name="username" placeholder="User_Name"><br>
       <label for="email"></label><br>
       <input type="email" id="email" name="email" placeholder="Email"><br>
       <label for="password"></label><br>
@@ -128,12 +130,13 @@
 const form = document.getElementById('signup-form');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+  const username = document.getElementById('username').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const confirmPassword = document.getElementById('confirm-password').value;
   const mobile = document.getElementById('mobile').value;
   // Check if any of the input fields are empty
-  if (!email || !password || !confirmPassword || !mobile) {
+  if (!username || !email || !password || !confirmPassword || !mobile) {
     alert('Please fill out all fields');
     return;
   }
@@ -148,11 +151,15 @@ alert('Passwords do not match');
 return;
 }
   // Send a GET request to the API to retrieve a list of all users
-  fetch('https://6350def1dfe45bbd55b0519a.mockapi.io/users')
+  fetch('https://6350def1dfe45bbd55b0519a.mockapi.io/CoinDex')
   .then((response) => response.json())
   .then((data) => {
     // Loop through the list of users and check if the username, email, or mobile already exists
     for (const user of data) {
+        if (user.username === username) {
+        alert('UserName already exists');
+        return;
+      }
       if (user.email === email) {
         alert('Email already exists');
         return;
@@ -165,7 +172,7 @@ return;
     // If username, email, and mobile do not already exist, you can send a POST request to the API to create a new user
     fetch('https://6350def1dfe45bbd55b0519a.mockapi.io/CoinDex', {
       method: 'POST',
-      body: JSON.stringify({ email, password, mobile }),
+      body: JSON.stringify({ username, email, password, mobile }),
       headers: {
         'Content-Type': 'application/json'
       }
